@@ -1,0 +1,4 @@
+<div *ngFor="let creador of creadores" class="creadores">
+  <p>- Nombre: {{creador[0]}}</p>
+  <a target="_blank" href="https://twitter.com/{{creador[1]}}?ref_src=twsrc%5Etfw" onclick="window.open(this.href, this.target, 'width=450,height=600'); return false" class="twitter-follow-button" data-lang="es" data-show-count="true">Seguir a @{{creador[1]}}</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>

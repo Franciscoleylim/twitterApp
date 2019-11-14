@@ -1,8 +1,20 @@
-.creadores{
+.creadores1 {
     margin-left: 20px;
     margin-bottom: 40px;
 }
 
-a{
+a {
     margin-left: 30px;
+}
+
+.creadores {
+    margin-left: 100px;
+    margin-right: 100px;
+    border: rgb(38, 38, 151) 2px solid;
+}
+
+.c1 {
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 20px;
 }

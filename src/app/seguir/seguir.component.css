@@ -1,0 +1,26 @@
+.body {
+    position: absolute;
+    background-image: linear-gradient(290deg, #55df98, #455b97);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 50%;
+    background-image: linear-gradient(290deg, #b6b6b6, #b6b6b6);
+}
+
+.contenedor1 {
+    padding-top: 10%;
+    padding-left: 30%;
+    width: 98%;
+    height: 98%;
+    background-image: linear-gradient(290deg, #fafafa, #e8e9ec);
+}

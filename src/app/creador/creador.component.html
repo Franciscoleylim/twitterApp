@@ -1,16 +1,8 @@
 <div *ngFor="let creador of creadores" class="creadores">
-<<<<<<< HEAD
+
     <p>- Nombre: {{creador[0]}}</p>
     <a target="_blank" href="https://twitter.com/{{creador[1]}}?ref_src=twsrc%5Etfw" onclick="window.open(this.href, this.target, 'width=450,height=600'); return false" class="twitter-follow-button" data-lang="es" data-show-count="true">Seguir a @{{creador[1]}}</a>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <br>
-    <a [routerLink]="['seguir']">clic aqui</a>
     <button type="button" [routerLink]="['seguir']" class="btn btn-primary">{{creador[1]}}</button>
 </div>
-=======
-  <p>- Nombre: {{creador[0]}}</p>
-  <a target="_blank" href="https://twitter.com/{{creador[1]}}?ref_src=twsrc%5Etfw" onclick="window.open(this.href, this.target, 'width=450,height=600'); return false" class="twitter-follow-button" data-lang="es" data-show-count="true">Seguir a @{{creador[1]}}</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  <br>
-  <button type="button" class="btn btn-primary creadores"><i class="fab fa-twitter"></i> {{creador[1]}}</button>
-</div>
->>>>>>> 85249df24f94ea9c4c9a4991da2642809b34ee21

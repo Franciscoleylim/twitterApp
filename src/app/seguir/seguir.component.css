@@ -19,7 +19,9 @@
 
 .contenedor1 {
     padding-top: 10%;
-    padding-left: 30%;
+    justify-content: center;
+    align-items: center;
+    padding-left: 27%;
     width: 98%;
     height: 98%;
     background-image: linear-gradient(290deg, #fafafa, #e8e9ec);

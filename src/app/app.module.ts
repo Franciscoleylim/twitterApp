@@ -9,6 +9,10 @@ import { AppComponent } from './app.component';
 import { CreadorComponent } from './creador/creador.component';
 import { SeguirComponent } from './seguir/seguir.component';
 
+//services
+import { HttpClientModule } from '@angular/common/http';
+import { DataApiService } from './services/data-api.service';
+
 
 @NgModule({
   declarations: [
@@ -18,9 +22,10 @@ import { SeguirComponent } from './seguir/seguir.component';
   ],
   imports: [
     BrowserModule,
-    APP_ROUTING
+    APP_ROUTING,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [DataApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

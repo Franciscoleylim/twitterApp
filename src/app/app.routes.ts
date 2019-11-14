@@ -1,9 +1,10 @@
 import {RouterModule, Routes} from '@angular/router';
-import { Component } from '@angular/core';
+import { CreadorComponent } from './creador/creador.component';
+import { SeguirComponent } from './seguir/seguir.component';
 
 const APP_ROUTES: Routes = [
-   { path: 'routePath', component: Component},
-   {path: '**', pathMatch: 'full', redirectTo: ''}
+   { path: 'Home', component: CreadorComponent},
+   { path: 'seguir', component: SeguirComponent},
+   {path: '**', pathMatch: 'full', redirectTo: 'Home'}
 ];
-
-export const app_routing = RouterModule.forRoot(APP_ROUTES);
+export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES);

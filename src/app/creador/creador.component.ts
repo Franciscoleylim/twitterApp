@@ -11,6 +11,7 @@ export class CreadorComponent implements OnInit {
 
   ngOnInit() {
     this.creadores = [["Creador 1","franciscleylim"],["Creador 2","ProAndroid"],["Creador 3","AnnaCLXY"],["Creador 4","Corona_MX"],["Creador 5","CarameloYoutube"]];
+ 
   }
 
 }

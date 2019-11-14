@@ -4,7 +4,7 @@ import { SeguirComponent } from './seguir/seguir.component';
 
 const APP_ROUTES: Routes = [
    { path: 'Home', component: CreadorComponent},
-   { path: 'Seguir', component: SeguirComponent},
+   { path: 'Seguir/:id', component: SeguirComponent},
    { path: '**', pathMatch: 'full', redirectTo: 'Home'}
 ];
 export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES) ;

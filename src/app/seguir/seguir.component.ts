@@ -10,11 +10,13 @@ export class SeguirComponent implements OnInit {
   public creadores: String[][];
   valor: number;
   dato: String;
+  usuario: String;
 
   constructor( private activatedRoute: ActivatedRoute) {
     this.activatedRoute.params.subscribe( params => {
        this.valor = params['id'];
     })
+    this.usuario="ss";
 
    }
 

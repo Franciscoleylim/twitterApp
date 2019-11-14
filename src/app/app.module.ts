@@ -8,7 +8,6 @@ import {APP_ROUTING} from './app.routes';
 import { AppComponent } from './app.component';
 import { CreadorComponent } from './creador/creador.component';
 import { SeguirComponent } from './seguir/seguir.component';
-import { DataApiService } from './services/data-api.service';
 
 
 @NgModule({
@@ -21,7 +20,7 @@ import { DataApiService } from './services/data-api.service';
     BrowserModule,
     APP_ROUTING
   ],
-  providers: [DataApiService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -5,7 +5,7 @@
         <div class="contenedor1">
             <h1 style="margin-left: 8%;">Creador</h1>
 
-            <input placeholder="@username">
+            <input #username placeholder="@username">
 
 
             <div style="height: 15%;"></div>
@@ -13,7 +13,7 @@
             </button>
 
             <div style="height: 20%;"></div>
-            <button style="margin-left: 15%;" type="button" class="btn btn-success ">Confirmar</button>
+            <button style="margin-left: 15%;" type="button" class="btn btn-success "><a (click) = "user=username.value;getDataApi()" style="color: rgb(255, 255, 255); text-decoration-line: none;"> Confirmar</a> </button>
         </div>
     </div>
 

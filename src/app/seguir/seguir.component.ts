@@ -15,8 +15,12 @@ export class SeguirComponent implements OnInit {
   usuario: String;
 
   public encontro : boolean;
+  public flag : boolean;
+  contador: number;
 
   public user : String;
+  public user_anterior : String;
+  data : any;
 
   constructor( private activatedRoute: ActivatedRoute,private dataApi: DataApiService) {
     this.activatedRoute.params.subscribe( params => {
@@ -31,27 +35,39 @@ export class SeguirComponent implements OnInit {
     this.dato= this.creadores[this.valor][1];
     this.user = "";
     this.encontro = false;
+    this.flag = false;
+    this.contador = 1;
 
   }
 
-  getDataApi(){
-    
+  async getDataApi(){
+    this.user_anterior = "";
     if(this.user !="" && this.user !=" "){
       this.dataApi.usuario = this.user;
-      this.dataApi.getDatos().subscribe( (data : any) => {
-        if(data["data"]){
-          for(var i = 0; i < data["data"]["users"].length; i++){
-            if(data["data"]["users"][i]["screen_name"] == this.dato){ this.encontro = true; break;}
-          }
-          if(this.encontro){
-            this.encontro = false;
-            alert("Gracias por completar el proceso");
-          }else{
-            alert("Favor de seguir al creador para poder continuar");
-            console.log(data);
-          }
-        }else{alert("Nombre de usuario invalido");}
-      });
+      this.dataApi.pagina = String(this.contador);
+      this.contador++;
+      this.data = await this.dataApi.getDatos().toPromise();
+      if(this.data["data"]){
+            if(this.user_anterior == this.data["data"]["users"][0]["screen_name"]){this.flag = true;}else{this.user_anterior = this.data["data"]["users"][0]["screen_name"];}
+            for(var i = 0; (i < this.data["data"]["users"].length) && !this.flag; i++){
+              if(this.data["data"]["users"][i]["screen_name"] == this.dato){ this.encontro = true; this.flag = true; break;}
+            }
+          }else{alert("Nombre de usuario invalido");}
+        
+      
+
+      if(this.encontro){
+        this.encontro = false;
+        this.contador=0;
+        alert("Gracias por completar el proceso");
+      }else if(this.flag){
+        this.contador=0;
+        alert("Favor de seguir al creador para poder continuar");
+      }else{
+        this.getDataApi();
+      }
+
+      
     }else{alert("Favor de llenar campo 'username'");}
   }
 

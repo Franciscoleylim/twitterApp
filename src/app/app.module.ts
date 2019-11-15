@@ -8,6 +8,7 @@ import {APP_ROUTING} from './app.routes';
 import { AppComponent } from './app.component';
 import { CreadorComponent } from './creador/creador.component';
 import { SeguirComponent } from './seguir/seguir.component';
+import { AgradecimientoComponent } from './agradecimiento/agradecimiento.component';
 
 //services
 import { HttpClientModule } from '@angular/common/http';
@@ -18,7 +19,8 @@ import { DataApiService } from './services/data-api.service';
   declarations: [
     AppComponent,
     CreadorComponent,
-    SeguirComponent
+    SeguirComponent,
+    AgradecimientoComponent
   ],
   imports: [
     BrowserModule,

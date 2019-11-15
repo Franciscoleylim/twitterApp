@@ -1,0 +1,7 @@
+{
+    "/servidor/*": {
+        "target": "https://autem.sytes.net",
+        "secure": false,
+        "changeOrigin": true
+    }
+}

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Routes } from '@angular/router';
 import { DataApiService } from '../services/data-api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-seguir',
@@ -22,7 +23,7 @@ export class SeguirComponent implements OnInit {
   public user_anterior : String;
   data : any;
 
-  constructor( private activatedRoute: ActivatedRoute,private dataApi: DataApiService) {
+  constructor( private activatedRoute: ActivatedRoute,private dataApi: DataApiService, private router: Router) {
     this.activatedRoute.params.subscribe( params => {
        this.valor = params['id'];
     })
@@ -59,7 +60,8 @@ export class SeguirComponent implements OnInit {
       if(this.encontro){
         this.encontro = false;
         this.contador=0;
-        alert("Gracias por completar el proceso");
+        this.router.navigate(['/gracias']);
+        //alert("Gracias por completar el proceso");
       }else if(this.flag){
         this.contador=0;
         alert("Favor de seguir al creador para poder continuar");

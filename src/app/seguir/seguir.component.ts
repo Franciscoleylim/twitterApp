@@ -32,8 +32,10 @@ export class SeguirComponent implements OnInit {
   }
 
   getDataApi(){
-    this.dataApi.usuario = this.user;
-    this.dataApi.getDatos().subscribe(data => console.log(data));
+    if(this.user !="" && this.user !=" "){
+      this.dataApi.usuario = this.user;
+      this.dataApi.getDatos().subscribe(data => console.log(data));
+    }else{alert("Favor de ingresar usuario de twitter");}
   }
 
 }
